@@ -1,4 +1,3 @@
-
 package main
 
 import (
@@ -18,10 +17,10 @@ func main() {
 		x := float32((rand.Float32() - 0.5) * 2)
 		y := float32((rand.Float32() - 0.5) * 2)
 		t := -1
-		if 10.0 * x + 15.0 * y > 1.0 {
+		if 10.0*x+15.0*y > 1.0 {
 			t = 1
 		}
-		p.Train([]float32{x, y, 1.0 /*bias*/}, t) 
+		p.Train([]float32{x, y, 1.0 /*bias*/}, t)
 	}
 
 	fmt.Printf("current w = [")
@@ -37,12 +36,12 @@ func main() {
 		x := float32((rand.Float32() - 0.5) * 2)
 		y := float32((rand.Float32() - 0.5) * 2)
 		te := -1
-		if 10.0 * x + 15.0 * y > 1.0 {
+		if 10.0*x+15.0*y > 1.0 {
 			te = 1
 		}
 		ta, _, _ := p.Predict([]float32{x, y, 1.0})
 		fmt.Printf("x = %f, y = %f, exp = %d, act = %d, ok = %v\n",
 			x, y, te, ta, te == ta)
 	}
-	
+
 }

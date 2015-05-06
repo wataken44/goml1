@@ -1,4 +1,3 @@
-
 package perceptron
 
 import (
@@ -11,7 +10,7 @@ type Perceptron struct {
 
 func NewPerceptron(w []float32) *Perceptron {
 	var p *Perceptron = &Perceptron{}
-	
+
 	p.w = make([]float32, len(w))
 	copy(p.w, w)
 	return p
